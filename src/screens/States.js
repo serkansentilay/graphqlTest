@@ -15,18 +15,18 @@ const States = ({ route }) => {
     })
 
     if (loading) {
-        return <Text>Fetching data...</Text>
+        return <Text style={styles.error}>Fetching data...</Text>
     }
     if (error) {
-        return <Text>States not found</Text>
+        return <Text style={styles.error}>States not found</Text>
     }
     if (data.country.states.length <= 0) {
-        return <Text>States not found</Text>
+        return <Text style={styles.error}>States not found</Text>
     }
     console.log(data.country.states)
     return (
         <View>
-            <Text>ALL STATES</Text>
+            <Text style={styles.error}>ALL STATES</Text>
             <FlatList
                 data={data.country.states}
                 renderItem={({ item }) => <StatesItem state={item} />}
@@ -40,4 +40,12 @@ const States = ({ route }) => {
 
 export default States
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    error: {
+        color: 'red',
+        fontSize: 20,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1
+    }
+})

@@ -5,6 +5,7 @@ const CountryItem = ({ country }) => {
     const navigation = useNavigation()
 
     const { name, code } = country;
+
     return (
         <Pressable onPress={() => navigation.navigate("States", { code: code })} >
             <Text style={styles.text}>{name}</Text>
@@ -22,5 +23,5 @@ const styles = StyleSheet.create({
         color: 'black',
         padding: 20,
         borderBottomWidth: 1
-    }
+    },
 })

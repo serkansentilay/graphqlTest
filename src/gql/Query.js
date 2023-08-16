@@ -14,7 +14,7 @@ export const COUNTRY_QUERY = gql`
     continent(code: $code) {
       countries {
         code
-        name
+        name      
       }
     }
   }
